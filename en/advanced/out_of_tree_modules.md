@@ -14,9 +14,9 @@ To create an external module:
   - This can be located anywhere outside of the **Firmware** tree.
   - It must have the same structure as **Firmware** (i.e. it must contain a directory called **src**).
   - Later we refer to this directory using `EXTERNAL_MODULES_LOCATION`.
-- Copy an existing module (e.g. **examples/px4_simple_app**) to the external directory, or directly create a new module.
+- Copy an existing module (e.g. **examples/px4_simple_app**) to <external directory/src/modules>, or directly create a new module.
 - Rename the module (including `MODULE` in **CMakeLists.txt**) or remove it from the existing Firmware *cmake* build config. This is to avoid conflicts with internal modules.
-- Add a file **CMakeLists.txt** in the external directory with content:
+- Add a file **CMakeLists.txt** in the `src` folder of external directory with content:
   ```
   set(config_module_list_external
       modules/<new_module>
